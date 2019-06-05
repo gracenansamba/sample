@@ -17,10 +17,10 @@ void dots(float *A, float *B, float *C, int M, int N, int K)
 	else 
 		{
 			int k; //where do  i set the k from? 
-			printf("A : %d, B : %d, C : %d, M : %d, N : %d, K : %d\n", A,B,C,M,N,K);
+			printf("A : %.1f", A[0]);
 			
 			float temp = 0;
-			for (k=0; k<K; k++){
+			for (k=0; k<3; k++){
 				temp += A[I*K+k] * B[k*N +J];
 				C[I*N+J] = temp;
 				printf ("C = %d  " ,C[I*N+J]);
@@ -33,17 +33,19 @@ void dots(float *A, float *B, float *C, int M, int N, int K)
 }
 int main()
 {
-	int M=3; int N=3; int K =1;
+
+	int M=3; int N=3; int K =3;
+/*
 	int A[M][K]= {1,2,3}; //can i do a dot like a matrix?
 	int B[K][N]= {1,2,3};
 	int C[M][N] = {0,0,0};
-/*
-	is this how i would do a normal dot
-	int A[M]= {1,2,3};
-	int B[N]= {1,2,3};
-	int C[K] = {0,0,0};
-	
 */
+	//is this how i would do a normal dot
+	float A[M]= {1,2,3}; printf("A : % .1f  %.1f %.1f ", A[0], A[1], A[2]);
+	float B[N]= {1,2,3};
+	float C[K] = {0,0,0};
+	
+
 	
 //Allocate memory for device
 	float *dA, *dB, *dC;
