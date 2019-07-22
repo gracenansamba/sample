@@ -51,7 +51,18 @@ class LUFact{
                                         return r3c = r3c - (k3*r2c);}
 			double el3(){
                                 return r3c = r3c - (k3*r2c);}
+			double k;
+			void coeff (){
 
+				if (row >=0)
+				{
+					if (row= r1a||row= r1a|| row= r1a || row= r1a)
+						{row - k = 0; }
+					else //if row-k= 0 ; do nothing else find k as an unknown
+				}
+				
+			}
+				
 };
 
 int main(){
