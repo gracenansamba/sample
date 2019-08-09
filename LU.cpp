@@ -32,7 +32,7 @@ class LUFact{
 	
 			
 			//double kkk;
-                        double elimRow2 (double A[3][3], double k1 ){
+                        double elimRow2 (double A[3][3], double& k1 ){
 				//double kkk;
 				for(int i=0; i<3; i++){
 				if(i==1){	
@@ -63,7 +63,7 @@ class LUFact{
 				}return A[3][3];//,k1;printf("k1 returned = %.1f ",k);
 				}
 			       				
-                        double elimRow3(double A[3][3] ){
+                        double elimRow3(double A[3][3], double& k2 ){
                                 //f (i==2){
                                 for(int i=0; i<3; i++){
                                 if(i==2){     
@@ -71,12 +71,12 @@ class LUFact{
 
 				if(j==0){
                                 //if (r1a !=0)
-					k= (A[i][j])/(A[i-2][j]);
-					printf ("value of k for second elim =%.1f \n", k);
+					k2= (A[i][j])/(A[i-2][j]);
+					printf ("value of k2 for second elim =%.1f \n", k2);
 					
 					}
 					//printf("value of k for second elim is %.1f" , k);
-                                        A[i][j] =A[i][j]  - (k*(A[i-2][j])); //printf("%.1f\t", U[i][j]);
+                                        A[i][j] =A[i][j]  - (k2*(A[i-2][j])); //printf("%.1f\t", U[i][j]);
 					}
                                 }
                                 }
@@ -92,17 +92,17 @@ class LUFact{
                                 }return A[3][3];
 			}
 
-			double elimRow3F(double A[3][3] ){
+			double elimRow3F(double A[3][3], double& k3 ){
                                 //f (i==2){
                                 for(int i=0; i<3; i++){
                                 if(i==2){
                                 for(int j=0; j<3; j++){
                                 //if (r1a !=0)
 				if (j==1){
-					k = (A[i][j])/(A[i-1][j]);
-					printf("value of k third elim = %.1f \n",k);
+					k3 = (A[i][j])/(A[i-1][j]);
+					printf("value of k3 third elim = %.1f \n",k3);
 				}
-                                        A[i][j] =A[i][j]  - (k*(A[i-1][j])); //printf("%.1f\t", U[i][j]);
+                                        A[i][j] =A[i][j]  - (k3*(A[i-1][j])); //printf("%.1f\t", U[i][j]);
 
                                 }
                                 }
@@ -147,9 +147,9 @@ int main(){
                          cout << "first elimination" << endl;
 			 one.elimRow2(A,k1);
 		 	 cout << "second elimination" << endl;
-			 one.elimRow3(A);
+			 one.elimRow3(A,k2);
 			 cout << " The upper Triangular is " << endl;
-			 one.elimRow3F(A);
+			 one.elimRow3F(A, k3);
 			//double k1,k2,k3,kkk;
 			 cout << "The lower triangular is "<< endl;
 			double L [3][3] ={{1,0,0},{k1,1,0},{k2,k3,1}};
