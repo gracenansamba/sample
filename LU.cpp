@@ -30,9 +30,10 @@ class LUFact{
 
 			//need a function to calculate the real LU 
 	
-
 			
-                        double elimRow2 (double A[3][3] ){
+			//double kkk;
+                        double elimRow2 (double A[3][3], double k1 ){
+				//double kkk;
 				for(int i=0; i<3; i++){
 				if(i==1){	
 				for(int j=0; j<3; j++){
@@ -50,7 +51,7 @@ class LUFact{
 
 	              		}
 				}
-				}
+				}// kkk=k1;printf("kkk returned = %.1f \n",kkk);
 
 				for (int i=0; i<3; i++){
                                 for (int j=0; j<3; j++)
@@ -59,10 +60,8 @@ class LUFact{
                                 }
                                         printf("\n"); printf("\n");
                                 
-				}return A[3][3];
+				}return A[3][3];//,k1;printf("k1 returned = %.1f ",k);
 				}
-				
-			
 			       				
                         double elimRow3(double A[3][3] ){
                                 //f (i==2){
@@ -124,8 +123,8 @@ class LUFact{
 int main(){
 			
                          double r1a,r1b,r1c,r2a,r2b,r2c,r3a,r3b,r3c;
-                         double k1, k2, k3;
-			
+                        double k1, k2, k3,kkk;
+			printf("value of k1 in the  main = %.1f", k1);
 	        	 cout << "please enter values of the 3 equations: "<< endl;
                          cin>> r1a; cout<< "";cin >>r1b;cout<< ""; cin>> r1c;cout<< "" <<endl;
                          cin>> r2a; cout<< "";cin>> r2b;cout<< ""; cin>> r2c;cout<< "" <<endl;
@@ -146,12 +145,12 @@ int main(){
 
  	                 LUFact one (r1a,r1b,r1c,r2a,r2b,r2c,r3a,r3b,r3c);
                          cout << "first elimination" << endl;
-			 one.elimRow2(A);
+			 one.elimRow2(A,k1);
 		 	 cout << "second elimination" << endl;
 			 one.elimRow3(A);
 			 cout << " The upper Triangular is " << endl;
 			 one.elimRow3F(A);
-
+			//double k1,k2,k3,kkk;
 			 cout << "The lower triangular is "<< endl;
 			double L [3][3] ={{1,0,0},{k1,1,0},{k2,k3,1}};
 			for(int i=0;i<3;i++){
