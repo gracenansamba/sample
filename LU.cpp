@@ -5,7 +5,9 @@
 /*
  this program can get the LU of a [3][3] matrix
  An equation solver should be robust and scalable
- it's still very manual unscalable
+ it's still very manual unscalable : (the user should
+ be able to enter any size of a matrix and the eimination 
+ formula should be one for all i guess 
  Working on that 
  */
 using namespace std;
@@ -18,6 +20,7 @@ class LUFact{
 			double A [3][3];
 			double U [3][3];
         public:
+			//constructor
                         LUFact (double r1a,double r1b,double r1c,double r2a,double r2b,double r2c,double r3a,double r3b,double r3c) {
                                 this->r1a=r1a; this->r1b=r1b; this->r1c=r1c;
                                 this->r2a=r2a; this->r2b=r2b; this->r2c=r2c;
@@ -102,8 +105,8 @@ class LUFact{
                         }	
 };
 
-int main(){	
-                         double r1a,r1b,r1c,r2a,r2b,r2c,r3a,r3b,r3c;
+int main(){
+			double r1a,r1b,r1c,r2a,r2b,r2c,r3a,r3b,r3c;
                         double k1, k2, k3,kkk;
 			//printf("value of k1 in the  main = %.1f", k1);
 	        	 cout << "please enter values of the 3 equations: "<< endl;
