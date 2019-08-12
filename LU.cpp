@@ -36,25 +36,21 @@ class LUFact{
 				if(j==0){
 					k1=(A[i][j])/(A[i-1][j]);
 					//printf("value of k1 = %.1f \n ",k1);
-				} 
+					} 
 				      // printf("value of k %.1f \n = " , k);	
 					//if(A[i][j]!=0 && j==0){
                                        		A [i][j] =A[i][j]  - (k1*(A[i-1][j]));
-					
-					//printf("value of A = %.1f\t", A[i][j]);printf("\n"); printf("\n");
-
-	              		}
+		          				}
+					}	
 				}
-				}
-
+				/*
 				for (int i=0; i<3; i++){
                                 for (int j=0; j<3; j++)
                                 {
                                         printf("%.1f\t", A[i][j]);
                                 }
-                                        printf("\n"); printf("\n");
-                                
-				}return A[3][3];//,k1;printf("k1 returned = %.1f ",k);
+                                        printf("\n"); printf("\n");}*/
+                                return A[3][3];//,k1;printf("k1 returned = %.1f ",k);
 				}
 			       				
                         double elimRow3(double A[3][3], double& k2 ){
@@ -70,16 +66,16 @@ class LUFact{
 					}
 					//printf("value of k for second elim is %.1f" , k);
                                         A[i][j] =A[i][j]  - (k2*(A[i-2][j])); //printf("%.1f\t", U[i][j]);
-					}
+							}
                                 }
-                                }
+                                }/*
                                 for (int i=0; i<3; i++){
 				 for (int j=0; j<3; j++)
                                 {
                                         printf("%.1f\t", A[i][j]);
                                 }
-                                        printf("\n"); printf("\n");
-                                }return A[3][3];
+                                        printf("\n"); printf("\n");}*/
+				return A[3][3];
 			}
 
 			double elimRow3F(double A[3][3], double& k3 ){
@@ -91,10 +87,10 @@ class LUFact{
 				if (j==1){
 					k3 = (A[i][j])/(A[i-1][j]);
 					//printf("value of k3 third elim = %.1f \n",k3);
-				}
+					}
                                         A[i][j] =A[i][j]  - (k3*(A[i-1][j])); //printf("%.1f\t", U[i][j]);
-                                }
-                                }
+                                		}
+                                	}
                                 }
                                 for (int i=0; i<3; i++){
                                  for (int j=0; j<3; j++)
@@ -119,9 +115,9 @@ int main(){
                          double U [3][3] = {{0,0,0},{0,0,0},{0,0,0}};
 			
 		         LUFact one (r1a,r1b,r1c,r2a,r2b,r2c,r3a,r3b,r3c);
-                         cout << "first elimination" << endl;
+                        //cout << "first elimination" << endl;
 			 one.elimRow2(A,k1);
-		 	 cout << "second elimination" << endl;
+		 	// cout << "second elimination" << endl;
 			 one.elimRow3(A,k2);
 			 cout << " The upper Triangular is " << endl;
 			 one.elimRow3F(A, k3);
