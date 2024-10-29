@@ -1,3 +1,13 @@
+/*
+ Expected output for 4 ranks
+
+ 	Root process gathered data:
+	0 1 2 3
+ 
+ 
+ */
+
+
 #include <mpi.h>
 #include <stdio.h>
 #include <stdlib.h>

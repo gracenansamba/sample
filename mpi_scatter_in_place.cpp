@@ -1,3 +1,13 @@
+/*
+ *
+ Expected output for 4 ranks 
+	Process 0 received data: 1
+	Process 1 received data: 2
+	Process 2 received data: 3
+	Process 3 received data: 4 
+
+*/
+
 #include <mpi.h>
 #include <stdio.h>
 #include <cstdlib>
